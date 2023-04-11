@@ -1,0 +1,26 @@
+CREATE TABLE bakery (id INTEGER PRIMARY KEY, item TEXT, sales INTEGER, flavors INTEGER, quantity INTEGER);
+
+INSERT INTO bakery VALUES
+(1, "Cupcakes", 203, 12, 300),
+(2, "Cookies", 143, 14, 350),
+(3, "Ice Cream", 24, 31, 29),
+(4, "Macaron", 170, 14, 205),
+(5, "Cake Pops", 21, 8, 130),
+(6, "Fruit", 59, 8, 203),
+(7, "Bread", 104, 14, 259),
+(8, "Cakes", 20, 15, 30),
+(9, "Donuts", 108, 13, 200),
+(10, "Cinnamon Rolls", 45, 2, 70),
+(11, "Cotton Candy", 7, 2, 17),
+(12, "Sandwiches", 21, 6, 45),
+(13, "Merch", 14, 8, 100),
+(14, "Brownies", 22, 3, 50),
+(15, "Tarts", 35, 4, 70)
+;
+
+--display inventory
+SELECT * FROM bakery;
+
+--display database quantity from most to least
+SELECT item, quantity FROM bakery
+ORDER BY quantity asc;
