@@ -1,4 +1,3 @@
-/* Create table about the people and what they do here */
 CREATE TABLE idols (id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     age INTEGER,
@@ -8,6 +7,17 @@ INSERT INTO idols (name, age, band) VALUES ("Hanni", 18, "New Jeans");
 INSERT INTO idols (name, age, band) VALUES ("Wonyoung", 18, "IVE");
 INSERT INTO idols (name, age, band) VALUES ("Nayeon", 27, "Twice");
 INSERT INTO idols (name, age, band) VALUES ("Jennie", 27, "BlackPink");
+INSERT INTO idols (name, age, band) VALUES ("Irene", 32, "Red Velvet");
+INSERT INTO idols (name, age, band) VALUES ("Lily", 20, "NMIXX");
+INSERT INTO idols (name, age, band) VALUES ("Jurin", 20, "XG");
+
+--male idols
+INSERT INTO idols (name, age, band) VALUES ("Felix", 22, "Stray Kids");
+INSERT INTO idols (name, age, band) VALUES ("Taehyung", 27, "BTS");
+INSERT INTO idols (name, age, band) VALUES ("Baekhyun", 30, "EXO");
+INSERT INTO idols (name, age, band) VALUES ("Vernon", 25, "Seventeen");
+INSERT INTO idols (name, age, band) VALUES ("Yugyeom", 25, "GOT7");
+INSERT INTO idols (name, age, band) VALUES ("Kihyun", 29, "Monsta X");
 
 CREATE TABLE band (id INTEGER PRIMARY KEY,
     position TEXT,
@@ -19,6 +29,14 @@ INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("vocalist"
 INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("visual", "dive", 4, 2);
 INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("center", "once", 3, 3);
 INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("rapper", "blink", 3, 4);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("leader", "revluv", 3, 5);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("vocalist", "NSWER", 4, 6);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("rapper", "alphaz", 4, 7);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("rapper", "stay", 4, 8);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("vocalist", "army", 3, 9);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("vocalist", "exo-l", 3, 10);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("rapper", "carat", 3, 11);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("dancer", "ahgase", 3, 12);
 
 SELECT * FROM idols;
 SELECT * FROM band;
@@ -27,4 +45,3 @@ SELECT * FROM band;
 SELECT i.name, b.position as main_position FROM idols i
     JOIN band b
     ON i.id = b.idol_id;
-    
