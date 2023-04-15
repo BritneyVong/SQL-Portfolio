@@ -1,0 +1,30 @@
+/* Create table about the people and what they do here */
+CREATE TABLE idols (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER,
+    band TEXT);
+    
+INSERT INTO idols (name, age, band) VALUES ("Hanni", 18, "New Jeans");
+INSERT INTO idols (name, age, band) VALUES ("Wonyoung", 18, "IVE");
+INSERT INTO idols (name, age, band) VALUES ("Nayeon", 27, "Twice");
+INSERT INTO idols (name, age, band) VALUES ("Jennie", 27, "BlackPink");
+
+CREATE TABLE band (id INTEGER PRIMARY KEY,
+    position TEXT,
+    fandom_name TEXT,
+    generation INTEGER,
+    idol_id INTEGER);
+    
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("vocalist", "bunnies", 4, 1);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("visual", "dive", 4, 2);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("center", "once", 3, 3);
+INSERT INTO band (position, fandom_name, generation, idol_id) VALUES ("rapper", "blink", 3, 4);
+
+SELECT * FROM idols;
+SELECT * FROM band;
+
+--idol names and positions
+SELECT i.name, b.position as main_position FROM idols i
+    JOIN band b
+    ON i.id = b.idol_id;
+    
