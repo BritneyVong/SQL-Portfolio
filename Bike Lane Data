@@ -1,0 +1,17 @@
+# In this project, I practiced utilizing common table expression to query data from city bike lanes and their ratings.
+
+#1 List all the bike lanes that have an average safety rating of 4.0 or higher
+as well as the average safety rating for each of those bike lanes, and a label
+that says "Safe Lane".
+
+# WITH safety_average_cte AS (
+SELECT street, avg(safetyrating) AS rating
+    FROM CityBikeLanes
+    GROUP BY street
+)
+
+SELECT street, rating, 'Safe Lane' AS label
+FROM safety_average_cte
+WHERE rating >= 4.0
+
+#2 
