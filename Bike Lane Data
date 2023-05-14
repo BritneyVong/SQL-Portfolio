@@ -13,5 +13,3 @@ SELECT street, avg(safetyrating) AS rating
 SELECT street, rating, 'Safe Lane' AS label
 FROM safety_average_cte
 WHERE rating >= 4.0
-
-#2 
