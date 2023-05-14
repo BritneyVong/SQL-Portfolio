@@ -1,0 +1,30 @@
+/* inventory of what I bought at DAISO */
+CREATE TABLE daiso (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stationery TEXT,
+    cosmetics TEXT,
+    office TEXT
+    );
+
+INSERT INTO daiso (stationery, cosmetics, office) VALUES ("highlighters", "face mask", "trash");
+
+INSERT INTO daiso (stationery, cosmetics, office) VALUES ("pens", "face mask", "wall hangers");
+
+INSERT INTO daiso (stationery, cosmetics, office) VALUES ("erasers", "eyeliner", "water bottle"); 
+
+SELECT * FROM daiso;
+
+-- adding snacks as a new column
+ALTER TABLE daiso ADD snacks TEXT;
+
+INSERT INTO daiso (stationery, cosmetics, office, snacks) VALUES ("ruler", "mascara", "staples", "pocky");
+
+-- changing water bottle to mousepad
+UPDATE daiso SET office = 'mousepad' WHERE office = 'water bottle';
+
+SELECT * FROM daiso;
+
+-- removing row 2
+DELETE FROM daiso WHERE id = 2;
+
+SELECT * FROM daiso;
